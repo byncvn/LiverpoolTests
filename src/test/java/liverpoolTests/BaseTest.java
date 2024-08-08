@@ -22,6 +22,7 @@ public class BaseTest {
 //TODO: handle multiple browsers
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
         return driver;
     }
 
@@ -34,7 +35,7 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-
+        driver.quit();
     }
 
 }
