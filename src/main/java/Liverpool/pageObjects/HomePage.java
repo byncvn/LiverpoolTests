@@ -2,7 +2,8 @@ package Liverpool.pageObjects;
 
 
 import Liverpool.AbstractComponents.Commons;
-import Liverpool.pageObjects.categories.CategoryPage;
+import Liverpool.pageObjects.authentication.LoginPage;
+import Liverpool.pageObjects.categories.ResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,9 +54,9 @@ public class HomePage extends Commons {
         clickElement(categoryButton);
     }
 
-    public CategoryPage clickPantallasCategory() {
+    public ResultPage clickPantallasCategory() {
         clickElement(pantallasCategory);
-        return  new CategoryPage(driver);
+        return  new ResultPage(driver);
     }
 /*
     public void printCategories() {
