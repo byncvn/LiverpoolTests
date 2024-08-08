@@ -34,7 +34,8 @@ public class HomePage extends Commons {
 
     //------------------------- methods -------------------------
 
-    public void method1() {
+    public void navigateTo() {
+        driver.get("https://www.liverpool.com.mx/tienda/home");
     }
 
     public void method2() {
