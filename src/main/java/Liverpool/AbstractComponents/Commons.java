@@ -39,11 +39,22 @@ public class Commons {
     }
 
     public void clickElement(WebElement element) {
+        //TODO: add a waitforElementToBeVisible
+        //TODO: add a log
+        System.out.println("Clicking on element: " + element);
+
         element.click();
     }
 
     public void enterText(WebElement element, String text) {
+        //TODO: add a waitforElementToBeVisible
+        //TODO: add a log
+        System.out.println("Entering text: " + text + " in element: " + element);
         element.sendKeys(text);
+    }
+
+    public void navigateToSignUp(String url) {
+        driver.get(url);
     }
 
 }
