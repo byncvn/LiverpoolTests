@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class CategoryPage extends Commons {
 
     WebDriver driver;
@@ -28,12 +30,16 @@ public class CategoryPage extends Commons {
     @FindBy(id = "")
     WebElement button4;
 
-    @FindBy(id = "")
-    WebElement button5;
+    @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div")
+    List<WebElement> categoriesList;
+
 
     //------------------------- methods -------------------------
 
-    public void method1() {
+    public void printCategories() {
+        for (WebElement category : categoriesList) {
+            System.out.println(category.getText());
+        }
     }
 
     public void method2() {
