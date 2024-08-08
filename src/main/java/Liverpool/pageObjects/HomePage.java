@@ -1,15 +1,9 @@
 package Liverpool.pageObjects;
-
-
-import Liverpool.pageObjects.authentication.LoginPage;
-import Liverpool.pageObjects.categories.ResultPage;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
 
 public class HomePage extends BasePage {
 
@@ -21,19 +15,21 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id = "")
+    WebElement button1;
 
+    @FindBy(id = "")
+    WebElement button2;
 
-    @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div")
-    List<WebElement> categoriesList;
-
-    @FindBy(xpath = "*//a[text()='Pantallas']")
-    WebElement pantallasCategory;
+    @FindBy(id = "")
+    WebElement button3;
 
     @FindBy(id = "")
     WebElement button4;
 
     @FindBy(id = "")
     WebElement button5;
+
 
     //------------------------- methods -------------------------
 
@@ -95,6 +91,15 @@ public class HomePage extends BasePage {
     }
 
 */
+    public void method1() {
+    }
+
+    public void method2() {
+    }
+
+    public void method3() {
+    }
+
     public void method4() {
     }
 
