@@ -10,20 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Commons {
+public class SeleniumUtils {
 
     WebDriver driver;
 
-    public Commons(WebDriver driver) {
+    public SeleniumUtils(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(id = "")
-    WebElement searchBox;
-
-    @FindBy(id = "")
-    WebElement searchButton;
 
     //------------------------- methods -------------------------
 

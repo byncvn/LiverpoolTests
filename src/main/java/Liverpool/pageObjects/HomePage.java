@@ -1,7 +1,7 @@
 package Liverpool.pageObjects;
 
 
-import Liverpool.AbstractComponents.Commons;
+import Liverpool.AbstractComponents.SeleniumUtils;
 import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.categories.ResultPage;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class HomePage extends Commons {
+public class HomePage extends SeleniumUtils {
 
     WebDriver driver;
 
@@ -21,11 +21,7 @@ public class HomePage extends Commons {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(className = "m-navDesktop__menuList")
-    WebElement categoryButton;
 
-    @FindBy(className = "sessionMinWidth")
-    WebElement iniciarSesionButton;
 
     @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div")
     List<WebElement> categoriesList;
