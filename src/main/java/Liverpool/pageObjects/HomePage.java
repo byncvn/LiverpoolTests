@@ -1,9 +1,9 @@
 package Liverpool.pageObjects;
 
 
-import Liverpool.AbstractComponents.SeleniumUtils;
 import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.categories.ResultPage;
+import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class HomePage extends SeleniumUtils {
+public class HomePage extends BasePage {
 
     WebDriver driver;
 
@@ -41,19 +41,6 @@ public class HomePage extends SeleniumUtils {
         driver.get("https://www.liverpool.com.mx/tienda/home");
     }
 
-    public LoginPage clickIniciarSesionButton() {
-        clickElement(iniciarSesionButton);
-        return new LoginPage(driver);
-    }
-
-    public void clickCategoryButton() {
-        clickElement(categoryButton);
-    }
-
-    public ResultPage clickPantallasCategory() {
-        clickElement(pantallasCategory);
-        return  new ResultPage(driver);
-    }
 /*
     public void printCategories() {
         for (WebElement category : categoriesList) {

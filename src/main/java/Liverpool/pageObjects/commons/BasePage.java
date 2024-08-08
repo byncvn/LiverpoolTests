@@ -1,6 +1,7 @@
 package Liverpool.pageObjects.commons;
 
 import Liverpool.AbstractComponents.SeleniumUtils;
+import Liverpool.pageObjects.authentication.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,6 +28,9 @@ public class BasePage extends SeleniumUtils {
 
     @FindBy(className = "icon-zoom")
     WebElement searchButton;
+
+    @FindBy(className = "sessionMinWidth")
+    WebElement iniciarSesionButton;
 
     @FindBy(id = "")
     WebElement misComprasButton;
@@ -81,6 +85,11 @@ public class BasePage extends SeleniumUtils {
 
     public void clickMisComprasButton() {
         clickElement(misComprasButton);
+    }
+
+    public LoginPage clickIniciarSesionButton() {
+        clickElement(iniciarSesionButton);
+        return new LoginPage(driver);
     }
 
     public void clickBagButton() {
