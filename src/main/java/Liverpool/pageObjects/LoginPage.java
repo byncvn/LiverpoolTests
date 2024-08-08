@@ -10,11 +10,38 @@ public class LoginPage extends Commons {
 
     WebDriver driver;
 
+
     public LoginPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    // ------------------------- commons elements -------------------------
+
+    @FindBy(id = "")
+    WebElement continueWithAppleButton;
+
+    @FindBy(id = "")
+    WebElement continueWithFacebookButton;
+
+    @FindBy(id = "")
+    WebElement footer;
+
+    @FindBy(id = "")
+    WebElement header;
+
+    @FindBy(id = "")
+    WebElement logo;
+
+    @FindBy(id = "")
+    WebElement informationText;
+
+    //TODO: make this a list
+    @FindBy(id = "")
+    WebElement subBrand1;
+
+    // ------------------------- loginPage -------------------------
 
     @FindBy(id = "")
     WebElement emailTextBox;
@@ -32,32 +59,27 @@ public class LoginPage extends Commons {
     WebElement createAccountButton;
 
     @FindBy(id = "")
-    WebElement appleLoginButton;
-
-    @FindBy(id = "")
-    WebElement facebookLoginButton;
-
-    @FindBy(id = "")
-    WebElement footer;
-
-    @FindBy(id = "")
-    WebElement header;
-
-    @FindBy(id = "")
-    WebElement logo;
-
-    @FindBy(id = "")
-    WebElement subBrand1;
-
-    @FindBy(id = "")
-    WebElement informationText;
-
-    @FindBy(id = "")
     WebElement iniciaSesionText;
 
     @FindBy(id = "")
     WebElement dontHaveAccountText;
 
+    // ------------------------- signUpPage -------------------------
+
+    @FindBy(id = "")
+    WebElement signUpButton;
+
+    @FindBy(id = "")
+    WebElement signUpText;
+
+    @FindBy(id = "")
+    WebElement loginLink;
+
+    @FindBy(id = "")
+    WebElement alreadyHaveAccountText;
+
+    @FindBy(id = "")
+    WebElement crearCuentaText;
 
     //------------------------- methods -------------------------
 
@@ -82,11 +104,11 @@ public class LoginPage extends Commons {
     }
 
     public void clickAppleLoginButton() {
-        clickElement(appleLoginButton);
+        clickElement(continueWithAppleButton);
     }
 
     public void clickFacebookLoginButton() {
-        clickElement(facebookLoginButton);
+        clickElement(continueWithFacebookButton);
     }
 
     public void clickForgotPasswordLink() {
@@ -105,11 +127,24 @@ public class LoginPage extends Commons {
         return logo.getText();
     }
 
+    private void clickSignUpButton() {
+        clickElement(signUpButton);
+    }
+
+
     public void logIn(String email, String password){
         setEmail(email);
         setPassword(password);
         clickLoginButton();
     }
+
+    public void signUp(String email, String password){
+        setEmail(email);
+        setPassword(password);
+        clickSignUpButton();
+    }
+
+
 
 
 }
