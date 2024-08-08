@@ -20,7 +20,10 @@ public class Commons {
     }
 
     @FindBy(id = "")
-    WebElement button1;
+    WebElement searchBox;
+
+    @FindBy(id = "")
+    WebElement searchButton;
 
     //------------------------- methods -------------------------
 
