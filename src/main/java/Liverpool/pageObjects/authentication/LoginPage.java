@@ -21,7 +21,7 @@ public class LoginPage extends BaseAuthenticationPage {
     @FindBy(id = "")
     WebElement forgotPasswordLink;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "*//button[text()='Iniciar sesión']")
     WebElement loginButton;
 
     @FindBy(xpath = "*//a[text()='Crear cuenta']")
@@ -32,6 +32,9 @@ public class LoginPage extends BaseAuthenticationPage {
 
     @FindBy(id = "")
     WebElement dontHaveAccountText;
+
+    @FindBy(id = "error-element-password")
+    WebElement wrongCredentialsSpan;
 
     //------------------------- methods -------------------------
 
@@ -56,6 +59,10 @@ public class LoginPage extends BaseAuthenticationPage {
         setEmail(email);
         setPassword(password);
         clickLoginButton();
+    }
+
+    public Boolean isWrongCredentialsSpanDisplayed() {
+        return wrongCredentialsSpan.isDisplayed();
     }
 
 }

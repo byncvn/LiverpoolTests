@@ -17,8 +17,8 @@ public class AuthenticationTests extends BaseTest {
 
     @Test(description = "logIn happy path")
     public void logIn() {
-        loginPage.logIn("user", "password");
-        Assert.assertTrue(true, "String message");
+        loginPage.logIn("ducegifi@rungel.net\n", "password");
+        Assert.assertTrue(loginPage.isWrongCredentialsSpanDisplayed(), "Wrong credentials message is not displayed");
     }
 
     @Test(description = "login with invalid credentials")

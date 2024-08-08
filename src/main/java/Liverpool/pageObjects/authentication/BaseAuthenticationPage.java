@@ -18,10 +18,10 @@ public class BaseAuthenticationPage extends Commons {
     }
 
     // ------------------------- commons elements -------------------------
-    @FindBy(id = "")
+    @FindBy(id = "username")
     WebElement emailTextBox;
 
-    @FindBy(id = "")
+    @FindBy(id = "password")
     WebElement passwordTextBox;
 
     @FindBy(xpath = "*//span[text()='Continuar con Apple']")
