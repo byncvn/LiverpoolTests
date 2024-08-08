@@ -57,4 +57,10 @@ public class Commons {
         driver.get(url);
     }
 
+
+    //TODO: add logic to create email and return credentials
+    public String createNewEmail() {
+        return "email";
+    }
+
 }

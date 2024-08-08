@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class CategoryPage extends Commons {
+public class ResultPage extends Commons {
 
     WebDriver driver;
 
-    public CategoryPage(WebDriver driver) {
+    public ResultPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
