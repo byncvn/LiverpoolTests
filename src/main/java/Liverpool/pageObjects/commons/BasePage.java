@@ -29,6 +29,14 @@ public class BasePage extends SeleniumUtils {
     @FindBy(className = "icon-zoom")
     WebElement searchButton;
 
+    // ------------------------- searchDropDownMenu -------------------------
+
+    @FindBy(className = "")
+    List<WebElement> searchDropDownMenu;
+
+    @FindBy(className = "")
+    List<WebElement> searchLinkResults;
+
     @FindBy(className = "sessionMinWidth")
     WebElement iniciarSesionButton;
 
@@ -126,5 +134,23 @@ public class BasePage extends SeleniumUtils {
 
     public void clickSeleccionaTuTiendaButton() {
         clickElement(seleccionaTuTiendaButton);
+    }
+
+    public void search(String input) {
+        clickSearchBox();
+        enterText(searchBar, input);
+        clickSearchButton();
+    }
+
+    public void search(String input, Boolean clickSearchButton) {
+        clickSearchBox();
+        enterText(searchBar, input);
+        if (clickSearchButton){
+            clickSearchButton();
+        }
+    }
+
+    public void getSuggestedProducts(String category) {
+
     }
 }
