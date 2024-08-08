@@ -1,15 +1,17 @@
 package Liverpool.pageObjects.categories;
 
+import Liverpool.AbstractComponents.Commons;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CategoryPage {
+public class CategoryPage extends Commons {
 
     WebDriver driver;
 
     public CategoryPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
