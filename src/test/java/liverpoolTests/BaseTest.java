@@ -12,7 +12,7 @@ import java.time.Duration;
 public class BaseTest {
 
     public WebDriver driver;
-//    public LandingPage landingPage;
+    public HomePage homePage;
 
     public WebDriver initializeDriver() {
         //using Chrome
@@ -27,10 +27,11 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void launch() {
+    public HomePage launch() {
         driver = initializeDriver();
-        HomePage homePage = new HomePage(driver);
+        homePage = new HomePage(driver);
         homePage.navigateTo();
+        return homePage;
     }
 
     @AfterMethod
