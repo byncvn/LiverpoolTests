@@ -3,6 +3,7 @@ package Liverpool.pageObjects.authentication;
 import Liverpool.AbstractComponents.Commons;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,7 +19,10 @@ public class BaseAuthenticationPage extends Commons {
     }
 
     // ------------------------- commons elements -------------------------
-    @FindBy(id = "username")
+    @FindAll({
+            @FindBy(id = "email"),
+            @FindBy(id = "username")
+    })
     WebElement emailTextBox;
 
     @FindBy(id = "password")
