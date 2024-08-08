@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -23,7 +24,26 @@ public class Commons {
 
     //------------------------- methods -------------------------
 
-    public void method1() {
+    public void waitForElementToBeVisible(By findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
     }
 
+    public void waitForElementToBeVisible(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(findBy));
+    }
+
+    public void waitFor(int seconds) throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(seconds).toMillis());
+    }
+
+    public void clickElement(WebElement element) {
+        element.click();
+    }
+
+    public void enterText(WebElement element, String text) {
+        element.sendKeys(text);
+    }
+    
 }
