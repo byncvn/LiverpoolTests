@@ -82,7 +82,8 @@ public class ResultPage extends BasePage {
         results.getFirst().click();
     }
 
-     public void clickResult(int index) {
+     public ProductPage clickResult(int index) {
          results.get(index).click();
+         return new ProductPage(driver);
      }
 }

@@ -26,5 +26,13 @@ public class ProductPage extends BasePage {
 
     //------------------------- methods -------------------------
 
+    public void clickBuyNowButton() {
+        clickElement(buyNowButton);
+    }
+
+    public void clickAddCartButton() {
+        clickElement(addCartButton);
+    }
+
 
 }

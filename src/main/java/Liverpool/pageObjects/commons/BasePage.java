@@ -23,14 +23,14 @@ public class BasePage extends SeleniumUtils {
     // ------------------------- elements -------------------------
 
     // ------------------------- Header -------------------------
-    @FindBy(id = "")
-    WebElement logo;
+    @FindBy(css = "img.a-header__logo[alt='Liverpool Logo']")
+    public WebElement logo;
 
     @FindBy(id = "mainSearchbar")
-    WebElement searchBar;
+    public WebElement searchBar;
 
     @FindBy(className = "icon-zoom")
-    WebElement searchButton;
+    public WebElement searchButton;
 
     // ------------------------- searchDropDownMenu -------------------------
 
@@ -193,6 +193,12 @@ public class BasePage extends SeleniumUtils {
             clickSearchButton();
         }
     }
+
+    public Boolean isPageDisplayed(WebElement element) {
+        return isElementDisplayed(element);
+    }
+
+
 
     public void getSuggestedProducts(String category) {
 

@@ -38,6 +38,10 @@ public class HomePage extends BasePage {
         driver.get("https://www.liverpool.com.mx/tienda/home");
     }
 
+    public Boolean isHomePageDisplayed() {
+        return isPageDisplayed(logo) && isPageDisplayed(searchBar) && isPageDisplayed(searchButton);
+    }
+
 /*
     public void printCategories() {
         for (WebElement category : categoriesList) {

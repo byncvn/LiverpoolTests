@@ -83,4 +83,8 @@ public class BaseAuthenticationPage extends BasePage {
     public void setPassword(String password) {
         enterText(passwordTextBox, password);
     }
+
+    public void sendKeys(WebElement element, String text) {
+        element.sendKeys(text);
+    }
 }

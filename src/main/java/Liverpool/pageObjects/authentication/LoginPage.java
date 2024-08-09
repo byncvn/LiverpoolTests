@@ -60,10 +60,13 @@ public class LoginPage extends BaseAuthenticationPage {
         setEmail(email);
         setPassword(password);
         clickLoginButton();
+        System.out.println("Logged in with email: " + email + " and password: " + password);
     }
 
-    public Boolean isWrongCredentialsSpanDisplayed() {
-        return wrongCredentialsSpan.isDisplayed();
+    public Boolean isWrongCredentialsSpanDisplayed(Boolean expected){
+//        return isElementDisplayed(wrongCredentialsSpan);
+        return isElementDisplayed(expected);
     }
+
 
 }
