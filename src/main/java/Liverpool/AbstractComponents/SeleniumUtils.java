@@ -3,7 +3,7 @@ package Liverpool.AbstractComponents;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,9 +13,11 @@ import java.time.Duration;
 public class SeleniumUtils {
 
     WebDriver driver;
+    Actions actions;
 
     public SeleniumUtils(WebDriver driver) {
         this.driver = driver;
+        this.actions = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -38,9 +40,19 @@ public class SeleniumUtils {
     public void clickElement(WebElement element) {
         //TODO: add a waitforElementToBeVisible
         //TODO: add a log
+//        System.out.println("Clicking on element: " + element.getAccessibleName());
         System.out.println("Clicking on element: " + element);
 
         element.click();
+    }
+
+    public void hoverOverElement(WebElement element) {
+        actions.moveToElement(element).perform();
+
+    }
+
+    public void scrollToElement(WebElement element) {
+        actions.scrollToElement(element).perform();
     }
 
     public void enterText(WebElement element, String text) {
