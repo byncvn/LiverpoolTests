@@ -33,6 +33,33 @@ public class SignUpPage extends BaseAuthenticationPage{
     @FindBy(id = "")
     WebElement crearCuentaText;
 
+    @FindBy(id = "input-user__name")
+    WebElement nameBox;
+
+    @FindBy(id = "input-user__apaterno")
+    WebElement lastNameBox;
+
+    @FindBy(id = "daySelectorLabel")
+    WebElement birthDayMenu;
+
+    @FindBy(id = "monthSelectorLabel")
+    WebElement birthMonthMenu;
+
+    @FindBy(id = "yearSelectorLabel")
+    WebElement birthYearMenu;
+
+    @FindBy(id = "male")
+    WebElement maleGenderRadioButton;
+
+    @FindBy(xpath = "*//button[text()='Crear cuenta']")
+    WebElement crearCuentaButton;
+
+    @FindBy(id = "phone")
+    WebElement phoneNumberField;
+
+    @FindBy(id = "")
+    WebElement verificationCodeField;
+
     // ------------------------- methods -------------------------
 
     private void clickSignUpButton() {
