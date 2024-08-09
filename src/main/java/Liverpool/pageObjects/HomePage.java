@@ -1,4 +1,5 @@
 package Liverpool.pageObjects;
+import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -91,7 +92,10 @@ public class HomePage extends BasePage {
     }
 
 */
-    public void method1() {
+    public void login(String user, String password) {
+        LoginPage loginPage = clickIniciarSesionButton();
+        loginPage.logIn(user, password);
+
     }
 
     public void method2() {
