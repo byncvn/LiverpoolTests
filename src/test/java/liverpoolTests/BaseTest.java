@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 public class BaseTest {
 
@@ -23,12 +24,16 @@ public class BaseTest {
     public HomePage homePage;
 
     public WebDriver initializeDriver() {
+        //TODO: handle multiple browsers using propeties file
+        Properties prop = new Properties();
+        String executionPropertiesFile = "";
+//        prop.load(executionPropertiesFile);
+        String browserName = prop.getProperty("browser");
+
+
         //using Chrome
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-
-//TODO: handle multiple browsers
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         return driver;
