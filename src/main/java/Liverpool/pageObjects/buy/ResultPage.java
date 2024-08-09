@@ -33,7 +33,7 @@ public class ResultPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div")
     List<WebElement> categoriesList;
 
-    @FindBy(css = "card-title a-card-description")
+    @FindBy(xpath = "*//figcaption/article/h5")
     List<WebElement> results;
 
     //------------------------- methods -------------------------
@@ -75,10 +75,14 @@ public class ResultPage extends BasePage {
         }
     }
 
-    public void getResults() {
+    public void printResults() {
         for (WebElement result : results) {
-            System.out.println("--------------- Result -------------------");
             System.out.println(result.getText());
         }
+        results.getFirst().click();
     }
+
+     public void clickResult(int index) {
+         results.get(index).click();
+     }
 }

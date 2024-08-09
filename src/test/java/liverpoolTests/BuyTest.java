@@ -13,7 +13,8 @@ public class BuyTest extends BaseTest{
         resultPage.clickHisenseFilter();
         resultPage.clicksSize32Filter();
         resultPage.setPriceFilter2000To5000();
-        resultPage.getResults();
+        resultPage.printResults();
+        resultPage.clickResult(1);
 
         Assert.assertTrue(true, "String message");
 
