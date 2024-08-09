@@ -23,16 +23,6 @@ public class SeleniumUtils {
 
     //------------------------- methods -------------------------
 
-    public Boolean isElementDisplayed(WebElement element, Boolean isDisplayed) {
-        if (isDisplayed) {
-            System.out.println("Checking if element is displayed: " + element);
-            return element.isDisplayed();
-        } else {
-            System.out.println("Checking if element is  displayed: " + element);
-            return element.isDisplayed();
-        }
-    }
-
     public Boolean isElementDisplayed(WebElement element) {
         System.out.println("Checking if element is displayed: " + element);
         return element.isDisplayed();
@@ -43,7 +33,7 @@ public class SeleniumUtils {
     }
 
     public void waitForElementToBeVisible(WebElement findBy) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(findBy));
     }
 

@@ -4,7 +4,11 @@ import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.authentication.SignUpPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class AuthenticationTests extends BaseTest {
 
@@ -25,6 +29,12 @@ public class AuthenticationTests extends BaseTest {
         loginPage.logIn(validEmail, validPassword);
         Assert.assertFalse(loginPage.isWrongCredentialsSpanDisplayed(false), "Wrong credentials message is not displayed");
         Assert.assertTrue(homePage.isHomePageDisplayed(), "Home page is not displayed");
+    }
+
+    @Test(description = "test description", dataProvider = "getData")
+    public void usingTestData() {
+        Assert.assertTrue(true, "String message");
+
     }
 
     @Test(description = "login with invalid credentials")
@@ -86,4 +96,13 @@ public class AuthenticationTests extends BaseTest {
 //        Assert.assertTrue(signUpPage.isInvalidEmailMessageDisplayed(), "Invalid email message is not displayed");
     }
 
+
+    @DataProvider
+    public static Object[][] getData() {
+        //TODO: Implement data provider with getJsonDataToMap()
+        return new Object[][]{
+                {"data1", "data2"},
+                {"data3", "data4"}
+        };
+    }
 }
