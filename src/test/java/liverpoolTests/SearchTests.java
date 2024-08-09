@@ -13,7 +13,14 @@ public class SearchTests extends BaseTest{
 
     @Test(description = "searchSomething")
     public void searchSomething() {
-
+        homePage.search("apple");
+        Assert.assertTrue(true);
     }
 
+    @Test(description = "test description")
+    public void checkSearchResults() {
+        homePage.search("apple", false);
+        Assert.assertTrue(true, "String message");
+
+    }
 }

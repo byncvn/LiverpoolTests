@@ -1,6 +1,5 @@
 package Liverpool.pageObjects.authentication;
 
-import Liverpool.AbstractComponents.SeleniumUtils;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -83,5 +82,9 @@ public class BaseAuthenticationPage extends BasePage {
 
     public void setPassword(String password) {
         enterText(passwordTextBox, password);
+    }
+
+    public void sendKeys(WebElement element, String text) {
+        element.sendKeys(text);
     }
 }

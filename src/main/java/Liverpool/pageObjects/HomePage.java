@@ -1,4 +1,5 @@
 package Liverpool.pageObjects;
+import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,10 @@ public class HomePage extends BasePage {
 
     public void navigateTo() {
         driver.get("https://www.liverpool.com.mx/tienda/home");
+    }
+
+    public Boolean isHomePageDisplayed() {
+        return isPageDisplayed(logo) && isPageDisplayed(searchBar) && isPageDisplayed(searchButton);
     }
 
 /*
@@ -91,7 +96,10 @@ public class HomePage extends BasePage {
     }
 
 */
-    public void method1() {
+    public void login(String user, String password) {
+        LoginPage loginPage = clickIniciarSesionButton();
+        loginPage.logIn(user, password);
+
     }
 
     public void method2() {
