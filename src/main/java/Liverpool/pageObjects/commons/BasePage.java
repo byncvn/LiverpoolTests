@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 
+import java.util.List;
+
 public class BasePage extends SeleniumUtils {
 
     WebDriver driver;
@@ -92,6 +94,11 @@ public class BasePage extends SeleniumUtils {
 
     @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div//a[text()='Pantallas']")
     WebElement pantallasLink;
+    @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div")
+    List<WebElement> categoriesList;
+
+    @FindBy(xpath = "*//a[text()='Pantallas']")
+    WebElement pantallasCategory;
 
     // ------------------------- Footer -------------------------
     //TODO: Add footer elements
