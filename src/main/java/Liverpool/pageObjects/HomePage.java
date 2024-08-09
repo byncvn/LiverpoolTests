@@ -1,8 +1,6 @@
 package Liverpool.pageObjects;
 
 
-import Liverpool.pageObjects.authentication.LoginPage;
-import Liverpool.pageObjects.categories.ResultPage;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
