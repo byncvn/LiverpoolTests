@@ -1,6 +1,5 @@
 package Liverpool.pageObjects.authentication;
 
-import Liverpool.AbstractComponents.SeleniumUtils;
 import Liverpool.pageObjects.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

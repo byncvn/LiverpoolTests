@@ -1,16 +1,13 @@
 package Liverpool.pageObjects.commons;
 
 import Liverpool.pageObjects.buy.Categories;
-import Liverpool.AbstractComponents.SeleniumUtils;
+import Liverpool.utils.SeleniumUtils;
 import Liverpool.pageObjects.authentication.LoginPage;
 import Liverpool.pageObjects.buy.ResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import java.util.List;
-
-
 import java.util.List;
 
 public class BasePage extends SeleniumUtils {

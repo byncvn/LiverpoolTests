@@ -9,13 +9,13 @@ public class BuyTest extends BaseTest{
 
     @Test(description = "test description")
     public void buyTv() {
+        homePage.login("user", "password");
         ResultPage resultPage = homePage.selectCategory(Categories.PANTALLAS);
         resultPage.clickHisenseFilter();
         resultPage.clicksSize32Filter();
         resultPage.setPriceFilter2000To5000();
         resultPage.printResults();
         resultPage.clickResult(1);
-
         Assert.assertTrue(true, "String message");
 
     }

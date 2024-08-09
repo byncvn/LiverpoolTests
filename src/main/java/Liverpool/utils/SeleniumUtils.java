@@ -1,4 +1,4 @@
-package Liverpool.AbstractComponents;
+package Liverpool.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
