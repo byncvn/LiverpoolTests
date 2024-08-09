@@ -1,9 +1,9 @@
 package Liverpool.pageObjects.commons;
 
-import Liverpool.pageObjects.categories.Categories;
+import Liverpool.pageObjects.buy.Categories;
 import Liverpool.AbstractComponents.SeleniumUtils;
 import Liverpool.pageObjects.authentication.LoginPage;
-import Liverpool.pageObjects.categories.Categories;
+import Liverpool.pageObjects.buy.ResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -87,8 +87,8 @@ public class BasePage extends SeleniumUtils {
     @FindBy(className = "")
     WebElement HogarLink;
 
-    @FindBy(className = "")
-    WebElement mueblesLink;
+    @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div/li/a[text()='Electrónica']")
+    WebElement electronicaLink;
 
     @FindBy(xpath = "//*[@id=\"categories-sidebarMenu\"]/div/div//a[text()='Pantallas']")
     WebElement pantallasLink;
@@ -157,24 +157,23 @@ public class BasePage extends SeleniumUtils {
         clickElement(seleccionaTuTiendaButton);
     }
 
-    public void selectCategory(Categories input) {
+    public ResultPage selectCategory(Categories input) {
+        clickCategoryButton();
+        //TODO: add a remove this hard coded "electronicaLink"
+        hoverOverElement(electronicaLink);
         switch (input) {
             case MUJER:
                 clickElement(MujerLink);
-                break;
             case HOMBRE:
                 clickElement(HombreLink);
-                break;
             case HOGAR:
                 clickElement(HogarLink);
-                break;
-            case MUEBLES:
-                clickElement(mueblesLink);
-                break;
+            case Electronica:
+                clickElement(electronicaLink);
             case PANTALLAS:
                 clickElement(pantallasLink);
-                break;
         }
+        return new ResultPage(driver);
     }
 
     public void search(String input) {
