@@ -1,11 +1,11 @@
-package Liverpool.pageObjects.categories;
+package Liverpool.pageObjects.buy;
 
 public enum Categories {
 
     MUJER,
     HOMBRE,
     HOGAR,
-    MUEBLES,
+    Electronica,
     PANTALLAS
 
 //TODO: Add more categories
